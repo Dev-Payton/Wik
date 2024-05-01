@@ -1,0 +1,92 @@
+.login-border-pane{
+    -fx-background-color: linear-gradient(to right, #6B6C76, #6B6C76);
+}
+
+.login-center-box{
+    -fx-border-color: #232D2E;
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-background-color: linear-gradient(to right, #3F4045, #3F4045);
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+.login-label{
+    -fx-font-size: 25px;
+-fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #6B6C76, #6B6C76);
+-fx-background-radius: 10px;
+-fx-padding: 5px 20px;
+-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 20, 0, 0, 10);
+-fx-alignment: center;
+}
+
+
+.login-password-field{
+    -fx-background-color:#121717;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-min-height: 20px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(169, 169, 169, 0.5), 5, 0.5, 0, 0);
+    -fx-background-insets: 0;
+
+}
+.login-username-field{
+    -fx-background-color:#121717;
+    -fx-text-fill: white;
+
+    -fx-font-size: 10px;
+    -fx-min-height: 20px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(169, 169, 169, 0.5), 5, 0.5, 0, 0);
+
+    -fx-background-insets: 0;
+
+}
+
+.login-wrapper{
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}
+
+.login-button{
+    -fx-font: 10px "Serif";
+    -fx-padding:5;
+    -fx-background-color: FFFFFF;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+
+}
+
+.register-label{
+    -fx-font-size: 12px;
+-fx-font-family: "Arial", sans-serif;
+-fx-text-fill: #ffffff;
+-fx-background-color: #2C2F33;
+-fx-background-radius: 4px;
+-fx-padding: 8px 16px;
+-fx-border: none;
+-fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 1, 0, 0, 1);
+-fx-cursor: default;
+
+}
+.register-button{
+    -fx-font-size: 12px;
+-fx-font-family: "Arial", sans-serif;
+-fx-text-fill: #ffffff;
+-fx-background-color: #2C2F33;
+-fx-background-radius: 4px;
+-fx-padding: 8px 16px;
+-fx-border: none;
+-fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 1, 0, 0, 1);
+-fx-cursor: hand;
+}
+
