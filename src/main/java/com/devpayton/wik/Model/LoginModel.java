@@ -8,4 +8,9 @@ import javafx.scene.layout.VBox;
 public class LoginModel {
 
 
+
+    public LoginModel(){
+
+    }
+
 }

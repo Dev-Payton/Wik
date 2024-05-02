@@ -3,6 +3,7 @@ package com.devpayton.wik.Control;
 
 import com.devpayton.wik.Model.LoginModel;
 import com.devpayton.wik.View.LoginView;
+import com.devpayton.wik.Model.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,11 +15,14 @@ import org.slf4j.LoggerFactory;
 
 public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
+    SceneManager sceneManager;
     LoginModel loginModel;
     LoginView loginView;
 
 
-    public LoginController(LoginModel loginModel, LoginView loginView) {
+
+    public LoginController(LoginModel loginModel, LoginView loginView, SceneManager sceneManager) {
+        this.sceneManager = sceneManager;
         this.loginModel = loginModel;
         this.loginView = loginView;
         setupKeyListeners();
@@ -41,6 +45,8 @@ public class LoginController {
 
 
         loginView.getLoginButton().setOnAction(this::handleLoginButtonPress);
+
+        loginView.getRegisterButton().setOnAction(this::handleRegisterButtonKeyPress);
 
 
     }
@@ -121,6 +127,14 @@ public class LoginController {
             System.out.println("Pressed enter inside of the password field");
         }
 
+
+    }
+
+    private void handleRegisterButtonKeyPress(ActionEvent event){
+        System.out.println("Attempting to handle registration form...");
+
+        sceneManager.initializeRegistrationModel();
+        sceneManager.showRegisterView();
 
     }
 

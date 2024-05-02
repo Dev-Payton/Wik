@@ -1,32 +1,24 @@
 package com.devpayton.wik;
 
-import com.devpayton.wik.Control.LoginController;
 import com.devpayton.wik.Database.DatabaseConnection;
-import com.devpayton.wik.Model.LoginModel;
-import com.devpayton.wik.View.LoginView;
+import com.devpayton.wik.Model.SceneManager;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class WikApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        //#------------------------------------------------- Setting up Title and Database Connections
         stage.setTitle("WIK!");
         DatabaseConnection.initializeDatabase();
+        //#----------------------------------------------------- Setting up Required MVC Layout
+        SceneManager sceneManager = new SceneManager(stage);
+        sceneManager.showLoginView();
 
-        LoginModel loginModel = new LoginModel();
-        LoginView loginView = new LoginView();
-        LoginController loginController = new LoginController(loginModel, loginView);
-
-        Scene loginScene = new Scene(loginView, 1000, 700);
-        loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 
         stage.setResizable(false);
-        stage.setScene(loginScene);
         stage.show();
 
 

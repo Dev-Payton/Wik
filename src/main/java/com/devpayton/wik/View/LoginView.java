@@ -3,9 +3,12 @@ package com.devpayton.wik.View;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import org.w3c.dom.Text;
+
+import java.util.Objects;
 
 
 public class LoginView extends BorderPane {
@@ -21,6 +24,13 @@ public class LoginView extends BorderPane {
     private final PasswordField loginPASSWORDField = new PasswordField();
     private final Button loginButton = new Button("Login");
     private final Label registerLabel = new Label("Not a member?");
+
+
+
+
+
+
+
     private final Button registerButton = new Button("Click Here");
     private final HBox registerBox = new HBox(10);
     private final Separator separator = new Separator();
@@ -46,7 +56,6 @@ public class LoginView extends BorderPane {
 
     public LoginView( ) {
         setupInitAlign();
-        setLoginCss();
 
     }
 
@@ -80,7 +89,7 @@ public class LoginView extends BorderPane {
     }
 
 
-    private void setLoginCss() {
+    public void setLoginCss() {
         this.getStyleClass().add("login-border-pane");
         centerBox.getStyleClass().add("login-center-box");
         loginLabel.getStyleClass().add("login-label");
@@ -126,4 +135,9 @@ public class LoginView extends BorderPane {
     public Button getLoginButton() {
         return loginButton;
     }
+
+    public Button getRegisterButton() {
+        return registerButton;
+    }
+
 }
