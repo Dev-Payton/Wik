@@ -1,4 +1,6 @@
-package com.devpayton.wik.Database;
+package com.devpayton.wik.Model;
+
+import com.devpayton.wik.Database.DatabaseConnection;
 
 import java.sql.*;
 

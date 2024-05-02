@@ -1,25 +1,13 @@
 package com.devpayton.wik.Control;
 
 
-import com.devpayton.wik.Database.UserData;
 import com.devpayton.wik.Model.LoginModel;
 import com.devpayton.wik.View.LoginView;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -76,9 +64,9 @@ public class LoginController {
 
     private void handleClearTextPasswordFocus(boolean isFocused) {
         if (isFocused) {
-            // Change to PasswordField
-        } else {
-           // Do nothing keep as TextField
+            loginView.getCenterBox().getChildren().remove(loginView.getClearTextPassword());
+            loginView.setPasswordBoxPos();
+            loginView.getLoginPASSWORDField().requestFocus();
         }
     }
 
@@ -86,15 +74,19 @@ public class LoginController {
 
         PasswordField passwordField = loginView.getLoginPASSWORDField();
         if (isFocused) {
-
             if (passwordField.getText().equals("Username")) {
                 passwordField.clear();
                 passwordField.setVisible(true);
+                loginView.getClearTextPassword().requestFocus();
+
             }
-        } else {
+        } else if (passwordField.getText().isEmpty() || passwordField.getText().equals("Password")){
             loginView.getCenterBox().getChildren().remove(loginView.getLoginPASSWORDField());
+            loginView.getClearTextPassword().clear();
+            loginView.getClearTextPassword().appendText("Password");
             loginView.setClearTextBoxPos();
         }
+
     }
 
 

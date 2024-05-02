@@ -24,6 +24,10 @@ public class LoginView extends BorderPane {
     private final Button registerButton = new Button("Click Here");
     private final HBox registerBox = new HBox(10);
     private final Separator separator = new Separator();
+    TextField clearTextPassword = new TextField("Password");
+    private boolean displayErrorMessage = true;
+
+
 
     public TextField getClearTextPassword() {
         return clearTextPassword;
@@ -33,8 +37,6 @@ public class LoginView extends BorderPane {
         this.clearTextPassword = clearTextPassword;
     }
 
-    TextField clearTextPassword = new TextField("Password");
-    private boolean displayErrorMessage = true;
 
     public void setDisplayErrorMessage(boolean displayErrorMessage) {
         this.displayErrorMessage = displayErrorMessage;
@@ -55,9 +57,9 @@ public class LoginView extends BorderPane {
         registerBox.setAlignment(Pos.CENTER);
         registerBox.getChildren().addAll(registerLabel, registerButton);
         separator.setPadding(new Insets(5, 0, 5, 0));
-        loginUSERNAMEField.setMaxWidth(200);
-       loginPASSWORDField.setMaxWidth(200);
-       clearTextPassword.setMaxWidth(200);
+        loginUSERNAMEField.setMaxWidth(250);
+       loginPASSWORDField.setMaxWidth(250);
+       clearTextPassword.setMaxWidth(250);
         loginButton.setMaxWidth(170);
         loginButton.setMaxHeight(20);
         loginButton.setPrefHeight(20.0);
@@ -67,7 +69,7 @@ public class LoginView extends BorderPane {
         centerBox.getChildren().addAll(
                 loginLabel,
                 loginUSERNAMEField,
-                loginPASSWORDField,
+                clearTextPassword,
                 loginButton,
                 separator,
                 registerBox
@@ -95,7 +97,7 @@ public class LoginView extends BorderPane {
     public void displayErrorMessage(String message) {
         if (this.displayErrorMessage){
             Label errorLabel = new Label(message);
-            errorLabel.setPadding(new Insets(0, 0, 0, 30));
+            errorLabel.setPadding(new Insets(0, 0, 0, 60));
             HBox errorHandlerBox = new HBox(10);
             //errorHandlerBox.setStyle("-fx-background-color: #4e5657;");
             errorHandlerBox.getChildren().addAll(errorLabel);
@@ -107,6 +109,9 @@ public class LoginView extends BorderPane {
 
     public void setClearTextBoxPos(){
         centerBox.getChildren().add(2, clearTextPassword);
+    }
+    public void setPasswordBoxPos(){
+        centerBox.getChildren().add(2, loginPASSWORDField);
     }
 
 

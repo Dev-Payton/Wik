@@ -22,7 +22,7 @@ public class WikApp extends Application {
         LoginView loginView = new LoginView();
         LoginController loginController = new LoginController(loginModel, loginView);
 
-        Scene loginScene = new Scene(loginView, 1200, 800);
+        Scene loginScene = new Scene(loginView, 1000, 700);
         loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 
         stage.setResizable(false);

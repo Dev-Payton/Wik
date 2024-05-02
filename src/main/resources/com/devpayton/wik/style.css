@@ -25,7 +25,7 @@
 .login-password-field{
     -fx-background-color:#121717;
     -fx-text-fill: white;
-    -fx-font-size: 10px;
+    -fx-font-size: 13px;
     -fx-min-height: 20px;
     -fx-background-radius: 4px;
     -fx-padding: 8px 16px;
@@ -39,7 +39,7 @@
     -fx-background-color:#121717;
     -fx-text-fill: white;
 
-    -fx-font-size: 10px;
+    -fx-font-size: 13px;
     -fx-min-height: 20px;
     -fx-background-radius: 4px;
     -fx-padding: 8px 16px;
@@ -57,7 +57,7 @@
 }
 
 .login-button{
-    -fx-font: 10px "Serif";
+    -fx-font: 13px "Serif";
     -fx-padding:5;
     -fx-background-color: FFFFFF;
     -fx-background-radius: 4px;
@@ -94,7 +94,7 @@
     -fx-background-color:#121717;
     -fx-text-fill: white;
 
-    -fx-font-size: 10px;
+    -fx-font-size: 13px;
     -fx-min-height: 20px;
     -fx-background-radius: 4px;
     -fx-padding: 8px 16px;
