@@ -1,6 +1,7 @@
 package com.devpayton.wik;
 
 import com.devpayton.wik.Control.LoginController;
+import com.devpayton.wik.Database.DatabaseConnection;
 import com.devpayton.wik.Model.LoginModel;
 import com.devpayton.wik.View.LoginView;
 import javafx.application.Application;
@@ -15,15 +16,16 @@ public class WikApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setTitle("WIK!");
+        DatabaseConnection.initializeDatabase();
 
         LoginModel loginModel = new LoginModel();
-        LoginView loginView = new LoginView(loginModel);
+        LoginView loginView = new LoginView();
         LoginController loginController = new LoginController(loginModel, loginView);
 
         Scene loginScene = new Scene(loginView, 1200, 800);
         loginScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 
-
+        stage.setResizable(false);
         stage.setScene(loginScene);
         stage.show();
 
