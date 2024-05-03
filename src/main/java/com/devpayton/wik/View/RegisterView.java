@@ -9,7 +9,9 @@ public class RegisterView extends BorderPane {
 
 
     public RegisterView(){
+
     testUI();
+
     }
 
     private void testUI(){
